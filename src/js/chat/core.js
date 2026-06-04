@@ -784,9 +784,9 @@ function stopChatStream() {
 async function renameChatSession(sessionId = 0) {
   const sid = sessionId || state._currentChatSession;
   if (!sid) return showToast(t('toast.noSessionSelected'), 'info');
-  const t = await showModal({ title: 'Rename Session', message: 'Enter a new title.', inputs: [{ placeholder: 'New title' }], buttons: [{ text: 'Cancel', value: false }, { text: 'Rename', value: true, primary: true }] });
-  if (!t?.action || !t.inputs?.[0]) return;
-  const n = t.inputs[0].trim();
+  const result = await showModal({ title: 'Rename Session', message: 'Enter a new title.', inputs: [{ placeholder: 'New title' }], buttons: [{ text: 'Cancel', value: false }, { text: 'Rename', value: true, primary: true }] });
+  if (!result?.action || !result.inputs?.[0]) return;
+  const n = result.inputs[0].trim();
   if (!n) return;
   try {
     const profile = document.getElementById('chat-profile')?.value || 'default';

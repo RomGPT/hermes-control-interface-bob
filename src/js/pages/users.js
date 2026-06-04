@@ -506,3 +506,19 @@ async function showResetPassword(username) {
 }
 
 export { loadUsersPage, loadAuditLogPage, loadUsers, refreshUsersEverywhere, deleteUser, showCreateUser, createUser, showEditUser, showResetPassword };
+
+// --- Global onclick helpers ---
+function togglePwVis(btn) {
+  const input = btn.parentElement.querySelector('input');
+  if (!input) return;
+  const isPassword = input.type === 'password';
+  input.type = isPassword ? 'text' : 'password';
+  btn.textContent = isPassword ? '🙈' : '👁';
+}
+window.togglePwVis = togglePwVis;
+
+function loadMoreAudit() {
+  state.auditDisplayLimit += 20;
+  loadAuditLogPage();
+}
+window.loadMoreAudit = loadMoreAudit;
