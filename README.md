@@ -103,7 +103,7 @@ Browser (11 pages, SPA)
        │
    HTTPS :10274
        │
-   Express Server (server.js — 6.4K lines)
+   Express Server (server.js — monolithic, ~6K+ lines)
        ├── Auth (bcrypt, sessions, CSRF)
        ├── RBAC (20 permissions, 3 roles)
        ├── REST API (30+ routes)
@@ -163,6 +163,7 @@ Full config: [docs/CONFIG.md](docs/CONFIG.md)
 git pull origin main
 npm install
 npm run build
+# Restart your HCI service (adjust service name):
 systemctl restart hci-staging
 ```
 
@@ -181,7 +182,6 @@ See [docs/DEPLOY.md](docs/DEPLOY.md) for zero-downtime deploys.
 | [SECURITY.md](docs/SECURITY.md) | CSP, CSRF, auth, hardening |
 | [DEPLOY.md](docs/DEPLOY.md) | Production deployment patterns |
 | [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | Common issues and fixes |
-| [CHANGELOG.md](docs/CHANGELOG.md) | Version history |
 
 ---
 
@@ -270,6 +270,7 @@ See [docs/INSTALL.md](docs/INSTALL.md) for production setup.
 git pull origin main
 npm install
 npm run build
+# Restart your HCI service (adjust service name):
 systemctl restart hci-staging
 ```
 
@@ -348,7 +349,7 @@ Browser (11 pages, SPA)
        │
    HTTPS :10274
        │
-   Express Server (server.js — 6.4K lines)
+   Express Server (server.js — monolithic, ~6K+ lines)
        ├── Auth (bcrypt, sessions, CSRF)
        ├── RBAC (20 permissions, 3 roles)
        ├── REST API (30+ routes)
@@ -375,7 +376,6 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for details.
 | [SECURITY.md](docs/SECURITY.md) | CSP, CSRF, auth, hardening |
 | [DEPLOY.md](docs/DEPLOY.md) | Zero-downtime deploys |
 | [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | Common issues and fixes |
-| [CHANGELOG.md](docs/CHANGELOG.md) | Version history |
 
 ### Community & Support
 
